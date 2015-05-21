@@ -1,8 +1,10 @@
 ---
+layout: default
 title: Jerzual Studio
 ---
-
-![Jerzual logo]({{ site.url }}/img/jerzual.png)
+<p class="jerzual-logo">
+<img src="{{ site.url }}/img/jerzual.png" alt="Jerzual logo"/>
+</p>
 
 #Jerzual Studio
 
