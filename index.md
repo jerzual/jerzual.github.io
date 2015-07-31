@@ -9,3 +9,19 @@ title: Jerzual Studio
 #Jerzual Studio
 
 A small indie game studio
+
+## Games
+
+### Alone
+
+### Tribes
+
+### Zelda
+
+### OY
+
+### Minotaur
+
+## Blog
+
+### Update 
