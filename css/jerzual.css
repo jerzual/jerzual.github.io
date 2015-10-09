@@ -1,11 +1,11 @@
-.jerzual-logo
-{
+body{
+	background-color:#F6F7F8;
+}
+.jerzual-logo{
 	margin-top:40px;
 }
 
-.jerzual-logo, 
-h1
-{
+.jerzual-logo, h1{
 	text-align:center;
 
 }
