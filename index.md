@@ -2,13 +2,13 @@
 layout: default
 title: Jerzual Studio
 ---
-<p class="jerzual-logo">
+<div class="jerzual-logo">
 <img src="{{ site.url }}/img/jerzual.png" alt="Jerzual logo"/>
-</p>
+</div>
 
-#Jerzual Studio
+# Jerzual Studio
 
-A small indie game studio
+A small french indie game studio
 
 ## Games
 
@@ -24,4 +24,12 @@ A small indie game studio
 
 ## Blog
 
-### Update 
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+## About

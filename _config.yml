@@ -1,2 +1,8 @@
 sass:
     style: :compressed
+collections:
+    games:
+        oy:
+            title: OY
+        minotaur:
+            title: Minotaur
