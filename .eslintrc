@@ -1,0 +1,24 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true,
+      "blockBindings": true,
+      "forOf": true,
+      "jsx": true,
+      "spread": true,
+      "templateStrings": true,
+      "generators": true,
+      "destructuring": true,
+      "classes": true,
+      "defaultParams": true
+    }
+  },
+  "rules": {
+    "semi": 2
+  },
+  "env": {
+    "node": true
+  }
+}
