@@ -1,20 +1,33 @@
 <html>
-  <head>
-    <title>{{ page.title }}</title>
+
+<head>
+  <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="{{ site.baseurl }}/css/normalize.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}/css/skeleton.css">
   <link rel="stylesheet" href="{{ site.baseurl }}/css/jerzual.css">
 
   <link rel="icon" type="image/png" href="{{ site.baseurl }}/img/jerzual.png">
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=alata:400" rel="stylesheet" />
+</head>
 
-  </head>
-  <body>
-  	<div class="container">
-    	{{ content }}
-	</div>
-  </body>
+<body>
+  <div class="site-wrapper">
+    <header>
+      <div class="container">
+        <h1>{{ page.title }}</h1>
+      </div>
+    </header>
+    <div class="jerzual-logo">
+      <img src="{{ site.baseurl }}/img/jerzual.png" alt="Jerzual logo" width="48" height="48" />
+      <div class="logo-text"><span class="title">JERZUAL</span><span class="subtitle">studio</span></div>
+    </div>
+    <main>
+      <div class="container">
+        {{ content }}
+      </div>
+    </main>
+  </div>
+</body>
+
 </html>

@@ -1,11 +1,101 @@
-body{
-	background-color:#F6F7F8;
-}
-.jerzual-logo{
-	margin-top:40px;
+:root {
+  --midnight: #191970;
+  --gold: #F7E7CE;
 }
 
-.jerzual-logo, h1{
-	text-align:center;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  background-color: var(--gold);
+  color: var(--midnight);
+  font-family: 'Alata', sans-serif;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+header {
+  background-color: var(--midnight);
+  color: #fff;
+  padding: 2rem 0 3rem;
+}
+
+header h1 {
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}
+
+header a {
+  color: var(--gold);
+}
+
+main {
+  background-color: var(--gold);
+  color: var(--midnight);
+  padding: 0rem 0 2rem;
+}
+
+main a {
+  color: var(--midnight);
+}
+
+.site-wrapper {
+  position: relative;
+}
+
+.jerzual-logo {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+  padding-left: 1.5rem;
+  transform: translateY(-60%);
+  margin-bottom: -1rem;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 0;
+  text-align: right;
+}
+
+.logo-text .title {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+}
+
+.logo-text .subtitle {
+  font-size: 1rem;
+  line-height: 1rem;
+  letter-spacing: 0.2em;
+  color: var(--midnight);
 }

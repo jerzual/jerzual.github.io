@@ -2,11 +2,6 @@
 layout: default
 title: Jerzual Studio
 ---
-<div class="jerzual-logo">
-<img src="{{ site.url }}/img/jerzual.png" alt="Jerzual logo"/>
-</div>
-
-# Jerzual Studio
 
 A small french indie game studio
 
