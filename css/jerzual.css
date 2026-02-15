@@ -37,6 +37,7 @@ li {
 }
 
 header {
+  position: relative;
   background-color: var(--midnight);
   color: #fff;
   padding: 2rem 0 3rem;
@@ -98,4 +99,71 @@ main a {
   line-height: 1rem;
   letter-spacing: 0.2em;
   color: var(--midnight);
+}
+
+/* Water droplet animation */
+.water-droplet {
+  position: absolute;
+  right: 0;
+  bottom: -64px;
+  width: 640px;
+  max-width: 50vw;
+  height: 128px;
+  z-index: 1;
+  pointer-events: none;
+  overflow: visible;
+}
+
+/* Droplet bounce — 2s cycle, ease-in-out so it's fastest through the midline */
+.droplet {
+  animation: droplet-bounce 2s ease-in-out infinite alternate;
+}
+
+@keyframes droplet-bounce {
+  0% {
+    transform: translateY(-28px);
+  }
+
+  100% {
+    transform: translateY(28px);
+  }
+}
+
+/*
+ * Ripple — expands leftward from the drop position.
+ * Droplet crosses midline at t=1s and t=3s (4s cycle).
+ * Ripple uses 2s duration with 1s delay so it fires at t=1s, 3s, 5s... matching each crossing.
+ */
+.ripple {
+  opacity: 0;
+  transform-origin: 600px 64px;
+  animation: ripple-expand 2s ease-out infinite;
+}
+
+.ripple-1 {
+  animation-delay: 1s;
+}
+
+.ripple-2 {
+  animation-delay: 1.15s;
+}
+
+.ripple-3 {
+  animation-delay: 1.3s;
+}
+
+@keyframes ripple-expand {
+  0% {
+    rx: 6;
+    ry: 4;
+    opacity: 0.7;
+    transform: translateX(0);
+  }
+
+  100% {
+    rx: 280;
+    ry: 2;
+    opacity: 0;
+    transform: translateX(-250px);
+  }
 }

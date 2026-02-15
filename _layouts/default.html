@@ -17,6 +17,44 @@
       <div class="container">
         <h1>{{ page.title }}</h1>
       </div>
+      <svg class="water-droplet" viewBox="0 0 640 128" preserveAspectRatio="xMaxYMid meet" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="gooey">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+            <feColorMatrix in="blur" mode="matrix"
+              values="1 0 0 0 0
+                      0 1 0 0 0
+                      0 0 1 0 0
+                      0 0 0 18 -7" result="gooey" />
+          </filter>
+          <clipPath id="clip-top">
+            <rect x="0" y="0" width="640" height="64" />
+          </clipPath>
+          <clipPath id="clip-bottom">
+            <rect x="0" y="64" width="640" height="64" />
+          </clipPath>
+        </defs>
+
+        <!-- Top half: gold shapes (visible against midnight header) -->
+        <g clip-path="url(#clip-top)">
+          <g filter="url(#gooey)">
+            <circle class="droplet" cx="600" cy="64" r="10" fill="var(--gold)" />
+            <ellipse class="ripple ripple-1" cx="600" cy="64" rx="6" ry="6" fill="var(--gold)" />
+            <ellipse class="ripple ripple-2" cx="600" cy="64" rx="6" ry="6" fill="var(--gold)" />
+            <ellipse class="ripple ripple-3" cx="600" cy="64" rx="6" ry="6" fill="var(--gold)" />
+          </g>
+        </g>
+
+        <!-- Bottom half: midnight shapes (visible against gold main) -->
+        <g clip-path="url(#clip-bottom)">
+          <g filter="url(#gooey)">
+            <circle class="droplet" cx="600" cy="64" r="10" fill="var(--midnight)" />
+            <ellipse class="ripple ripple-1" cx="600" cy="64" rx="6" ry="6" fill="var(--midnight)" />
+            <ellipse class="ripple ripple-2" cx="600" cy="64" rx="6" ry="6" fill="var(--midnight)" />
+            <ellipse class="ripple ripple-3" cx="600" cy="64" rx="6" ry="6" fill="var(--midnight)" />
+          </g>
+        </g>
+      </svg>
     </header>
     <div class="jerzual-logo">
       <img src="{{ site.baseurl }}/img/jerzual.png" alt="Jerzual logo" width="48" height="48" />
