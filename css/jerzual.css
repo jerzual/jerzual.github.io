@@ -116,54 +116,59 @@ main a {
 
 /* Droplet bounce — 2s cycle, ease-in-out so it's fastest through the midline */
 .droplet {
+  transform-origin: 600px 64px;
   animation: droplet-bounce 2s ease-in-out infinite alternate;
 }
 
 @keyframes droplet-bounce {
   0% {
-    transform: translateY(-28px);
+    transform: translateY(-28px) scale(1);
+  }
+
+  40% {
+    transform: translateY(-4px) scale(0.6);
+  }
+
+  50% {
+    transform: translateY(0) scale(0);
+  }
+
+  60% {
+    transform: translateY(4px) scale(0.6);
   }
 
   100% {
-    transform: translateY(28px);
+    transform: translateY(28px) scale(1);
   }
 }
 
 /*
- * Ripple — expands leftward from the drop position.
- * Droplet crosses midline at t=1s and t=3s (4s cycle).
- * Ripple uses 2s duration with 1s delay so it fires at t=1s, 3s, 5s... matching each crossing.
+ * Ripple — one per half, expands symmetrically from the drop.
+ * 4s cycle, active first half, idle second half.
+ * Bottom fires at t=1s (crossing down), top fires at t=3s (crossing up).
  */
 .ripple {
   opacity: 0;
   transform-origin: 600px 64px;
-  animation: ripple-expand 2s ease-out infinite;
+  animation: ripple-expand 4s cubic-bezier(0.2, 0.6, 0.3, 1) infinite;
 }
 
-.ripple-1 {
-  animation-delay: 1s;
-}
-
-.ripple-2 {
-  animation-delay: 1.15s;
-}
-
-.ripple-3 {
-  animation-delay: 1.3s;
-}
+.ripple-bottom { animation-delay: 1s; }
+.ripple-top { animation-delay: 3s; }
 
 @keyframes ripple-expand {
   0% {
-    rx: 6;
-    ry: 4;
-    opacity: 0.7;
-    transform: translateX(0);
+    transform: scaleX(1) scaleY(1);
+    opacity: 0.8;
   }
 
-  100% {
-    rx: 280;
-    ry: 2;
+  50% {
+    transform: scaleX(80) scaleY(1);
     opacity: 0;
-    transform: translateX(-250px);
+  }
+
+  50.1%, 100% {
+    transform: scaleX(1) scaleY(1);
+    opacity: 0;
   }
 }
